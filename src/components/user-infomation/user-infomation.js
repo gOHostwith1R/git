@@ -3,38 +3,11 @@ import  React, {Component} from 'react';
 import './user-infomation.css';
 import group from '../../images/group_24px.png';
 import person from '../../images/person_24px.png';
-import GitHubService from "../../services/git-service";
-
 
 export default class UserInfo extends Component  {
 
-    gitHubService = new GitHubService()
-
-    state = {
-        user: {},
-    }
-
-    componentDidMount() {
-        this.updateUser();
-    }
-
-    onError = () => {
-
-    }
-
-    onLoadedUser = (user) => {
-        this.setState({ user })
-    }
-
-    updateUser() {
-        this.gitHubService
-            .getPeople(this.props.term)
-            .then(this.onLoadedUser)
-            .catch(this.onError)
-    }
-
     render() {
-        const {avatarUrl, followers, following, name, login, htmlUrl } = this.state.user
+        const {avatarUrl, followers, following, name, login, htmlUrl } = this.props.user
         return (
             <div className={'user-info'}>
                 <img className={'user-image'} src={avatarUrl} alt={'user-icon'} />

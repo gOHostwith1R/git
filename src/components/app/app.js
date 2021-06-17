@@ -1,6 +1,9 @@
 import React, {Component} from 'react'
 import {BrowserRouter as Router, Route } from "react-router-dom";
 
+import GitHubService from "../../services/git-service";
+
+
 import Header from "../header";
 import UserInfo from "../user-infomation";
 import Repositories from "../repositories";
@@ -11,9 +14,18 @@ import './app.css';
 
 class App extends Component  {
 
+    gitHubService = new GitHubService()
+
     state = {
         clickEnter: false,
-        term: ''
+        term: '',
+        user: {}
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if(this.state.clickEnter === true) {
+            this.updateUser();
+        }
     }
 
     selectedClickEnter = (clickEnter) => {
@@ -28,15 +40,28 @@ class App extends Component  {
         });
     }
 
+    onLoadedUser = (user, clickEnter) => {
+        this.setState({ user })
+        this.setState({
+            clickEnter: false
+        })
+    }
+
+    updateUser() {
+        this.gitHubService
+            .getPeople(this.state.term)
+            .then(this.onLoadedUser)
+            .catch(this.onError)
+    }
+
     render() {
-        console.log(this.state.clickEnter)
         return (
             <Router>
                 <div>
                     <Header selectedClickEnter={this.selectedClickEnter} onTermChange={this.onTermChange}/>
                     <div className={'content'}>
                         <Route path="/" exact/>
-                        <Route path="/user"><UserInfo click={this.state.clickEnter} term={this.state.term}/>
+                        <Route path="/user"><UserInfo user={this.state.user}/>
                         </Route>
                         <Route path="/user">  <Repositories />
                         </Route>
