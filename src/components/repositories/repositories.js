@@ -6,15 +6,6 @@ import './repositories.css';
 
 const Repositories = ({term}) => {
 
-    const [dataRepos, setDataRepos] = useState(null)
-
-    const gitHubServices = new GitHubService();
-
-    const onError = (err) => {
-
-    }
-
-
     return (
       <div className={"repositories"}>
           <h2 className={"repositories-title"}>Repositories {2}</h2>
