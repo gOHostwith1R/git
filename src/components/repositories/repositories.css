@@ -1,0 +1,42 @@
+.repositories-title {
+    font-family: Inter, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 130%;
+    color: #000000;
+}
+
+.list-item__title {
+    font-family: Inter,sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+
+    color: #0064EB;
+
+    padding-bottom: 16px;
+    padding-top: 24px;
+    padding-left: 32px;
+    margin: 0;
+}
+
+.list-item__subtitle {
+    font-family: Inter, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+
+    color: #000000;
+    margin: 0;
+    padding-left: 32px;
+    padding-bottom: 24px;
+}
+
+.list-item {
+    background: #FFFFFF;
+    margin-bottom: 24px;
+    width:  54.8125em;
+}

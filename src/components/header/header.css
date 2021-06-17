@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+}
+
+.header {
+    width: 100%;
+    background: #0064EB;
+    display: flex;
+    height: 72px;
+}
+
+.header-image {
+    margin: 16px 22px 16px 41px;
+}
+
+.header-form {
+    width: 500px;
+    height: 40px;
+}
+
+.header-input {
+    font-family: Inter, serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.01em;
+    width: 500px;
+    height: 40px;
+    margin-top: 16px;
+    border-radius: 6px;
+    border: none;
+
+    color: #808080;
+}
+
+.button-submit {
+    background: #0064EB;
+    border: none;
+}

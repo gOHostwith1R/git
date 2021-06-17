@@ -1,0 +1,18 @@
+.subscriptions-start {
+    font-family: Inter, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 140%;
+
+    text-align: center;
+
+    color: #808080;
+
+    width: 210px;
+}
+
+.start-page {
+    text-align: center;
+    margin: 12.3125em auto;
+}
